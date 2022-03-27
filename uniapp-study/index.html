@@ -118,6 +118,9 @@
       src="https://gitee.com/dcloud/uni-app/raw/master/dist/uni.webview.1.5.2.js"
     ></script>
     <script type="text/javascript">
+      document.querySelector(".post-message-section").style.visibility =
+        "visible";
+
       // 待触发 `UniAppJSBridgeReady` 事件后，即可调用 uni 的 API。
       document.addEventListener("UniAppJSBridgeReady", function () {
         uni.postMessage({
@@ -164,7 +167,7 @@
           .addEventListener("click", function () {
             uni.postMessage({
               data: {
-                action: new Date().toLocaleTimeString()
+                action: new Date().toLocaleTimeString(),
               },
             });
           });
